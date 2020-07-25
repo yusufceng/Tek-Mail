@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "608750607303",
+    "firebase_url": "https://tek-mail.firebaseio.com",
+    "project_id": "tek-mail",
+    "storage_bucket": "tek-mail.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608750607303:android:d9a4eb96e8aeaa4e1817e2",
+        "android_client_info": {
+          "package_name": "com.example.zcompany.tekmail"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608750607303-62tnbtgas6d95anm316h707q74uf5aa7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zcompany.tekmail",
+            "certificate_hash": "57ef62db7cd7791268854a377b0dd3ea0298317d"
+          }
+        },
+        {
+          "client_id": "608750607303-gfv8oi2hja5s1ioo3frdbcg6i7meacr8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnlFsMJ-E2t_6DeJ1wKuzCMGJhF9W3HdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608750607303-gfv8oi2hja5s1ioo3frdbcg6i7meacr8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

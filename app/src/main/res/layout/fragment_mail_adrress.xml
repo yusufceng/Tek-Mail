@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginTop="150dp"
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editTextMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Mail Adresiniz"
+            android:inputType="textPersonName"
+            android:textColor="#157AA5"
+            android:textColorHint="#157AA5"
+            android:textStyle="normal" />
+
+        <EditText
+            android:id="@+id/editTextDomain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextMail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="tek-mail.net"
+            android:textColor="#157AA5"
+            android:textColorHint="#157AA5"
+            android:textStyle="normal"
+            />
+
+        <Button
+            android:id="@+id/buttonCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextDomain"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:width="230dp"
+            android:background="@android:color/holo_green_dark"
+            android:text="Oluştur"
+            />
+
+
+    </RelativeLayout>
+</RelativeLayout>
