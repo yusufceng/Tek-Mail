@@ -1,6 +1,7 @@
 package com.example.zcompany.tekmail;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
             textViewDate=itemView.findViewById(R.id.textViewDate);
             textViewSubject=itemView.findViewById(R.id.textViewSubject);
             rl=itemView.findViewById(R.id.rl);
+
         }
     }
 
@@ -46,8 +48,8 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CardViewTasarimNesneleriniTutucu holder, int position) {
-        Mail mail=mailList.get(position);
+    public void onBindViewHolder(@NonNull final CardViewTasarimNesneleriniTutucu holder, int position) {
+        final Mail mail=mailList.get(position);
         if (mail.getMail_From_Name().equals(""))
             holder.textViewName.setText((mail.getMail_From_Address()));
         else
@@ -58,9 +60,17 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
         holder.rl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Mail getiriliyor...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Mail yükleniyor "+mail.getMail_uid(), Toast.LENGTH_SHORT).show();
+
+                Intent yeniIntent=new Intent(mContext,MailBodyActivity.class);
+                yeniIntent.putExtra("uid",mail.getMail_uid());
+                //yeniIntent.putExtra("nesne", mail);
+                mContext.startActivity(yeniIntent);
+
+
             }
         });
+
 
     }
 

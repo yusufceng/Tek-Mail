@@ -8,10 +8,12 @@ import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 
 
 public class FragmentMailBox extends Fragment {
-    private WebView webview;
+
     private View view;
     private RecyclerView rv;
     MailAdapter mailAdapteradapter;
@@ -50,6 +52,8 @@ public class FragmentMailBox extends Fragment {
         mailArrayList=new ArrayList<>();
         mailAdapteradapter =new MailAdapter(getContext(),mailArrayList);
         rv.setAdapter(mailAdapteradapter);
+        rv.addItemDecoration(new DividerItemDecoration(getContext(),1));
+
 
         mailRead();
 
@@ -69,7 +73,9 @@ public class FragmentMailBox extends Fragment {
                 for (DataSnapshot snapshot:dataSnapshot.getChildren())
                 {
                     Mail mail=snapshot.getValue(Mail.class);
+                    mail.setMail_uid(snapshot.getKey());
                     mailArrayList.add(mail);
+                    //Toast.makeText(getContext(), mail.getMail_uid(), Toast.LENGTH_SHORT).show();
                 }
                 mailAdapteradapter.notifyDataSetChanged();
             }
