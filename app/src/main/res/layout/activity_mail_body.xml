@@ -4,41 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/whiteBackground"
     tools:context=".MailBodyActivity">
 
 
-    <LinearLayout
-        android:id="@+id/LL"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="false"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/textViewBodyFrom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gönderen"
-            android:textSize="20sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
-            />
-
-        <TextView
-            android:id="@+id/textViewBodySubject"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Subject"
-            android:textSize="20sp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="10dp"
-            />
-    </LinearLayout>
 
     <WebView
-
         android:id="@+id/webview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/LL"
-        android:layout_marginTop="10dp" />
+        android:background="@color/whiteBackground"/>
+
 </RelativeLayout>

@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Tek Mail</string>
+    <string name="From">Gönderen</string>
+    <string name="Subject">Konu</string>
+    <string name="Date">Tarih</string>
+    <string name="Dot">------------------------------</string>
+
+
 </resources>

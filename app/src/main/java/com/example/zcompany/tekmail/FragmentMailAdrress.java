@@ -11,6 +11,8 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -24,36 +26,40 @@ public class FragmentMailAdrress extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_mail_adrress,container,false);
+        view = inflater.inflate(R.layout.fragment_mail_adrress, container, false);
 
-        buttonCreate=view.findViewById(R.id.buttonCreate);
-
-
-
-       //init();
+        buttonCreate = view.findViewById(R.id.buttonCreate);
 
 
-    return view;}
 
-    void init()
-    {
+        init();
+
+
+        return view;
+    }
+
+    void init() {
         buttonCreate.setOnClickListener(new View.OnClickListener() {
+            Fragment fragment = new FragmentMailBox();
+
             @Override
             public void onClick(View v) {
-                Log.e("tıklanma calisti","mail adresi olusturuldu");
-                FragmentMailBox fragment =new FragmentMailBox();
-                startActivity(new Intent(getContext(),fragment.getClass()));
+                Log.e("tıklanma calisti", "mail adresi olusturuldu");
+
+                FragmentManager fragMgr = getFragmentManager();
+                FragmentTransaction ft = fragMgr.beginTransaction();
+                //ft.addToBackStack(null);
+                Intent yeniIntent = new Intent(getContext(), FragmentMailAdrress.class);
+                yeniIntent.putExtra("alias_name","admin" );
+                ft.replace(R.id.viewpager,fragment);
+                ft.commit();
 
 
             }
         });
 
 
-
-
     }
-
-
 
 
 }
