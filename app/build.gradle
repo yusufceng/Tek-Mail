@@ -7,6 +7,7 @@ android {
     defaultConfig {
         applicationId "com.example.zcompany.tekmail"
         minSdkVersion 15
+        vectorDrawables.useSupportLibrary = true
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
