@@ -4,7 +4,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,18 +18,30 @@ class MyViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return fragmentList.get(position);
+        Fragment fragment = null;
+        if (position == 0) {
+            fragment = new FragmentMailAdrress();
+        } else if (position == 1) {
+            fragment = new FragmentMailBox();
+        }
+        return fragment;
     }
 
     @Override
     public int getCount() {
-        return fragmentList.size();
+        return 2;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return fragmentBaslikList.get(position);
+        String title = null;
+        if (position == 0) {
+            title = "AnaSayfa";
+        } else if (position == 1) {
+            title = "Gelen Kutusu";
+        }
+        return title;
     }
 
     public void fragmentEkle(Fragment fragment, String baslik) {

@@ -3,7 +3,14 @@
     <string name="From">Gönderen</string>
     <string name="Subject">Konu</string>
     <string name="Date">Tarih</string>
-    <string name="Dot">------------------------------</string>
+    <string name="nails_ishere">Mailleriniz bu alanda gösterilecektir.</string>
+    <string name="connection_state">Lütfen internet bağlantınızı kurup tekrar deneyiniz...</string>
+    <string name="connection_stateNO">Internet bağlantısı hala kurulamadı..!</string>
+    <string name="connection_stateOK">Bağlantı Kuruldu, yönlendiriliyorsunuz..!</string>
+    <string name="connections_try">İnternet bağlantısı hala kurulamadı..!</string>
+    <string name="connection_state2">Internet bağlantısı olmadan mail adresi alamazsınız, mail kutusunu kontrol etmek için Tamam\'a basınız</string>
+
+
 
 
 </resources>

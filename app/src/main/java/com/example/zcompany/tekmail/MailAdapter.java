@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,7 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
     }
 
     public class CardViewTasarimNesneleriniTutucu extends RecyclerView.ViewHolder {
-        public RelativeLayout rl;
+        public LinearLayout ll;
         public TextView textViewName;
         public TextView textViewDate;
         public TextView textViewSubject;
@@ -38,7 +39,7 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
             textViewName = itemView.findViewById(R.id.textViewName);
             textViewDate = itemView.findViewById(R.id.textViewDate);
             textViewSubject = itemView.findViewById(R.id.textViewSubject);
-            rl = itemView.findViewById(R.id.rl);
+            ll = itemView.findViewById(R.id.ll);
 
         }
     }
@@ -59,7 +60,7 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
         try {
             Date date = format.parse(dtStart);
-            Log.e(" ",date.toString());
+            Log.e(" ", date.toString());
 
         } catch (ParseException e) {
             e.printStackTrace();
@@ -73,14 +74,14 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
 
         holder.textViewDate.setText(dtStart);
         holder.textViewSubject.setText(mail.getMail_Subject());
-        holder.rl.setOnClickListener(new View.OnClickListener() {
+        holder.ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Mail yükleniyor " + mail.getMail_uid(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "Mail yükleniyor ", Toast.LENGTH_SHORT).show();
 
                 Intent yeniIntent = new Intent(mContext, MailBodyActivity.class);
                 yeniIntent.putExtra("uid", mail.getMail_uid());
-                //yeniIntent.putExtra("nesne", mail);
+                yeniIntent.putExtra("alias_name", mail.getMail_Address());
                 mContext.startActivity(yeniIntent);
             }
         });
