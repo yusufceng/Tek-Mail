@@ -7,7 +7,6 @@
     android:background="#fff"
     tools:context=".OfflineActivity">
 
-<<<<<<< HEAD
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -76,87 +75,12 @@
                 android:background="@drawable/button_random_round"
                 android:text="Yeniden Dene"
                 android:textColor="#fff" />
-=======
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_centerVertical="true">
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:src="@drawable/myicon"
-                android:layout_gravity="center"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ücretsiz Temp E-mail Hizmeti "
-                android:textSize="18sp"
-                android:fontFamily="@font/bangers"
-                android:layout_gravity="center"
-                android:layout_marginTop="-20dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="13sp"
-                android:text="Bir ID yazın ve arkanıza yaslanın..."
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-                android:layout_marginStart="5dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="25dp">
-
-                <TextView
-                    android:id="@+id/textViewConnectStatus"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:textAlignment="center"
-                    android:textStyle="bold"
-                    android:textSize="25dp"
-                    android:text="@string/connection_state"
-                    android:gravity="center_horizontal"></TextView>
-                <ImageView
-                    android:id="@+id/imageviewConnectionsState"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="10dp"
-                    app:srcCompat="@drawable/ic_baseline_wifi_off_24"/>
-
-
-                <Button
-                    android:id="@+id/buttonTryAgain"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:text="Yeniden Dene"
-                    android:background="@drawable/button_random_round"
-                    android:layout_gravity="center"
-                    android:textColor="#fff"/>
-
-
-            </LinearLayout>
->>>>>>> origin/master
 
 
         </LinearLayout>
 
 
-<<<<<<< HEAD
     </LinearLayout>
-=======
->>>>>>> origin/master
 
 
 </RelativeLayout>

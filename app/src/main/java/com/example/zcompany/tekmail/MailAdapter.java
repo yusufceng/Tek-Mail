@@ -40,10 +40,6 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
             textViewDate = itemView.findViewById(R.id.textViewDate);
             textViewSubject = itemView.findViewById(R.id.textViewSubject);
             ll = itemView.findViewById(R.id.ll);
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
         }
     }
 

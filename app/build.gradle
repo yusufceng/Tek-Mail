@@ -6,12 +6,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.zcompany.tekmail"
-<<<<<<< HEAD
         minSdkVersion 21
-=======
-        minSdkVersion 15
-        vectorDrawables.useSupportLibrary = true
->>>>>>> origin/master
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
