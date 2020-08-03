@@ -20,7 +20,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="@string/nails_ishere"
-        tools:ignore="NotSibling"
         android:textSize="20sp"
-        android:visibility="visible"/>
+        android:visibility="visible"
+        tools:ignore="NotSibling" />
 </RelativeLayout>

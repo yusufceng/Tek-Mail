@@ -10,6 +10,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,8 +30,6 @@ public class MailBodyActivity extends AppCompatActivity {
             findMail(getIntent().getStringExtra("uid"), getIntent().getStringExtra("alias_name"));
         else
             Log.e(getIntent().getStringExtra("uid") + getIntent().hasExtra("alias_name"), " eksik olan var");
-
-
     }
 
 
@@ -71,6 +70,5 @@ public class MailBodyActivity extends AppCompatActivity {
 
         webview.loadData(html, "text/html", "base64");
     }
-
 
 }

@@ -1,4 +1,5 @@
 package com.example.zcompany.tekmail;
+
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -14,9 +15,11 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
@@ -33,15 +36,23 @@ public class FragmentMailAdrress extends Fragment {
     SendMessage SM;
 
     private static final int LONG_DELAY = 3000;
-    private static final int SHORT_DELAY = 1000;
+    private static final int SHORT_DELAY = 2000;
     private ClipboardManager copyPnao;
     private ClipData clipData;
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
     private String random_mailID;
     private ArrayList<RandomMail> mailArrayList;
-
-
+    private SwipeRefreshLayout swipeRefresh;
+    private TextInputLayout mailIDRandom;
+    private Button buttonCreate;
+    private TextInputLayout mailID;
+    private TextInputLayout mailDomain;
+    private LinearLayout LinearLayoutTakeDomain;
+    private LinearLayout LinearLayoutCopy;
+    private LinearLayout LinearLayoutRefresh;
+    private LinearLayout LinearLayoutNew;
+    private Button buttonSave;
 
     @Nullable
     @Override
@@ -50,24 +61,29 @@ public class FragmentMailAdrress extends Fragment {
         View rootView = inflater.inflate(
                 R.layout.fragment_mail_adrress, container, false);
 
-        mailArrayList=new ArrayList<>();
+        mailArrayList = new ArrayList<>();
+        swipeRefresh = rootView.findViewById(R.id.swipeRefresh);
+        buttonCreate = rootView.findViewById(R.id.buttonCreate);
+        buttonSave = rootView.findViewById(R.id.buttonSave);
+        mailID = rootView.findViewById(R.id.mailID);
+        mailIDRandom = rootView.findViewById(R.id.mailIDRandom);
+        mailDomain = rootView.findViewById(R.id.mailDomain);
+        LinearLayoutTakeDomain = rootView.findViewById(R.id.LinearLayoutTakeDomain);
+        LinearLayoutCopy = rootView.findViewById(R.id.LinearLayoutCopy);
+        LinearLayoutRefresh = rootView.findViewById(R.id.LinearLayoutRefresh);
+        LinearLayoutNew = rootView.findViewById(R.id.LinearLayoutNew);
+        swipeRefresh = rootView.findViewById(R.id.swipeRefresh);
 
-        sp=getActivity().getSharedPreferences("Where",getActivity().MODE_PRIVATE);
-        editor=sp.edit();
-        if (sp.getString("MailID","none").equals("none"))
-        {
-            //random_mailID="admin";
+        sp = getActivity().getSharedPreferences("Where", getActivity().MODE_PRIVATE);
+        editor = sp.edit();
+        if (sp.getString("MailID", "none").equals("none")) {
             getRandomMailIDFromDB();
-            Log.i(random_mailID," ");
-            getActivity().startActivity(new Intent(getContext(),MainActivity.class));
+            Log.i(random_mailID, " ");
+            getActivity().startActivity(new Intent(getContext(), MainActivity.class));
             getActivity().finish();
 
-        }
-        else
-            random_mailID=sp.getString("MailID","none");
-
-
-
+        } else
+            random_mailID = sp.getString("MailID", "none");
 
         return rootView;
 
@@ -77,25 +93,23 @@ public class FragmentMailAdrress extends Fragment {
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button buttonCreate = view.findViewById(R.id.buttonCreate);
-        Button buttonSave = view.findViewById(R.id.buttonSave);
-        final TextInputLayout mailID = view.findViewById(R.id.mailID);
-        final TextInputLayout mailIDRandom = view.findViewById(R.id.mailIDRandom);
-        final TextInputLayout mailDomain = view.findViewById(R.id.mailDomain);
-        final LinearLayout LinearLayoutTakeDomain = view.findViewById(R.id.LinearLayoutTakeDomain);
-        final LinearLayout LinearLayoutCopy = view.findViewById(R.id.LinearLayoutCopy);
-        final LinearLayout LinearLayoutRefresh = view.findViewById(R.id.LinearLayoutRefresh);
-        final LinearLayout LinearLayoutNew = view.findViewById(R.id.LinearLayoutNew);
-
-        random_mailID=sp.getString("MailID","none");
-        mailIDRandom.getEditText().setText(random_mailID+"@tek-mail.net");
+        random_mailID = sp.getString("MailID", "none");
+        mailIDRandom.getEditText().setText(random_mailID + "@tek-mail.net");
         copyPnao = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
+
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                dispachRefresh();
+                Toast.makeText(getContext(), "Sayfa yenileniyor...", Toast.LENGTH_SHORT).show();
+                showAToast("Sayfa yenilendi...");
+            }
+        });
 
         buttonCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 LinearLayoutTakeDomain.setVisibility(View.VISIBLE);
-
             }
         });
 
@@ -111,12 +125,10 @@ public class FragmentMailAdrress extends Fragment {
                     Toast.makeText(getContext(), "Mail Adresiniz olusturuluyor lütfen bekleyiniz...", Toast.LENGTH_SHORT).show();
                     showAToast("Geçici Mail Adresiniz Kullanıma Hazır!");
                     spMailIDRegister(mailID.getEditText().getText().toString());
-                    mailIDRandom.getEditText().setText(mailID.getEditText().getText().toString()+"@tek-mail.net");
+                    mailIDRandom.getEditText().setText(mailID.getEditText().getText().toString() + "@tek-mail.net");
                 }
-
             }
         });
-
 
         mailDomain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +140,8 @@ public class FragmentMailAdrress extends Fragment {
             @Override
             public void onClick(View v) {
                 getRandomMailIDFromDB();
-                refreshActivty();
+                Toast.makeText(getContext(), "Yeni e-mail hesabınız ayarlanıyor...", Toast.LENGTH_SHORT).show();
+                showAToast("Yeni e-mail hesabınız kullanıma hazır.");
             }
         });
 
@@ -150,9 +163,9 @@ public class FragmentMailAdrress extends Fragment {
         LinearLayoutRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                refreshActivty();
-
-
+                dispachRefresh();
+                Toast.makeText(getContext(), "Sayfa yenileniyor...!", Toast.LENGTH_SHORT).show();
+                showAToast("Sayfa yenilendi...");
             }
         });
 
@@ -192,69 +205,72 @@ public class FragmentMailAdrress extends Fragment {
     }
 
 
-    public void getRandomMailIDFromDB()
-    {
-        DatabaseReference ref=FirebaseDatabase.getInstance().getReference("Mail_ID").child("free");
-        Query queryUid=ref.orderByKey().limitToFirst(1);
-        queryUid.addListenerForSingleValueEvent(new ValueEventListener() {
+    public void getRandomMailIDFromDB() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Mail_ID").child("free");
+        Query query = ref.orderByKey().limitToFirst(1);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mailArrayList.clear();
                 for (DataSnapshot datas : dataSnapshot.getChildren()) {
-                    String key=datas.getKey();
-                    RandomMail randomMail=datas.getValue(RandomMail.class);
+                    RandomMail randomMail = datas.getValue(RandomMail.class);
                     mailArrayList.add(randomMail);
-                    //String mailadres=randomMail.getMail_Address();
                     setrandom_mailID(mailArrayList.get(0).getMail_Address());
                     deletesSelectedMailIDFromDB(datas.getKey());
                     //updateUsedMailIDFromFreeMailID(mailArrayList.get(0));
-
                 }
             }
 
             @Override
-            public void onCancelled(DatabaseError databaseError) {
-
+            public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
-
     }
 
-    public void deletesSelectedMailIDFromDB(String uuid)
-    {
+    public void deletesSelectedMailIDFromDB(String uuid) {
         DatabaseReference pathID = FirebaseDatabase.getInstance().getReference("Mail_ID").child("free").child(uuid);
         pathID.removeValue();
         return;
     }
 
-    public void setrandom_mailID(String str)
-    {
+    public void setrandom_mailID(String str) {
         spMailIDRegister(str);
-        Log.e("1","boş oldugu için çalıştı");
+
     }
 
-    public void spMailIDRegister(String random_mailID)
-    {
-        SharedPreferences sp=getActivity().getSharedPreferences("Where",getActivity().MODE_PRIVATE);
-        SharedPreferences.Editor e=sp.edit();
-        e.putString("MailID",random_mailID);
+    public void spMailIDRegister(String random_mailID) {
+        SharedPreferences sp = getActivity().getSharedPreferences("Where", getActivity().MODE_PRIVATE);
+        SharedPreferences.Editor e = sp.edit();
+        e.putString("MailID", random_mailID);
         e.commit();
-        getActivity().startActivity(new Intent(getContext(),MainActivity.class));
-        getActivity().finish();
+        dispachRefresh();
     }
-    public void updateUsedMailIDFromFreeMailID(RandomMail randomMail)
-    {
+
+    public void updateUsedMailIDFromFreeMailID(RandomMail randomMail) {
         DatabaseReference pathID = FirebaseDatabase.getInstance().getReference("Mail_ID").child("used");
         pathID.push().setValue(randomMail);
         return;
-
     }
 
-    public void refreshActivty()
-    {
-        getActivity().startActivity(new Intent(getContext(),MainActivity.class));
-        getActivity().finish();
+    private SwipeRefreshLayout.OnRefreshListener refreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            dispachRefresh();
+        }
+    };
+
+    private void dispachRefresh() {
+        swipeRefresh.setRefreshing(true);
+        sp = getActivity().getSharedPreferences("Where", getActivity().MODE_PRIVATE);
+        editor = sp.edit();
+        random_mailID = sp.getString("MailID", "none");
+        mailIDRandom.getEditText().setText(random_mailID + "@tek-mail.net");
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                swipeRefresh.setRefreshing(false);
+            }
+        }, SHORT_DELAY);
     }
-
-
-
 }

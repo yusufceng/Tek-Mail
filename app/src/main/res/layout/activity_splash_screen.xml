@@ -27,28 +27,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
         android:text="Hoş Geldiniz "
         android:textAlignment="center"
         android:textSize="50sp"
         app:fontFamily="@font/bangers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageview"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/imageview" />
 
     <TextView
         android:id="@+id/textViewTemp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:gravity="center_horizontal"
         android:text="Tek kullanımlık mail hizmeti"
         android:textAlignment="center"
         android:textSize="20sp"
         app:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewWelcome"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewWelcome" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

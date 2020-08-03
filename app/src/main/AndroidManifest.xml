@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MailBodyActivity"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".OfflineActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,14 +23,12 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-
 public class FragmentMailBox extends Fragment {
 
     private View view;
     private RecyclerView rv;
     private TextView textViewMailshere;
-    MailAdapter mailAdapteradapter;
-    private TextView textViewDefault;
+    private MailAdapter mailAdapteradapter;
     private ArrayList<Mail> mailArrayList;
     private SharedPreferences sp;
     private SharedPreferences.Editor editor;
@@ -48,10 +45,10 @@ public class FragmentMailBox extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        sp=getActivity().getSharedPreferences("Where",getActivity().MODE_PRIVATE);
-        editor=sp.edit();
+        sp = getActivity().getSharedPreferences("Where", getActivity().MODE_PRIVATE);
+        editor = sp.edit();
         init();
-        mailRead(sp.getString("MailID","none"));
+        mailRead(sp.getString("MailID", "none"));
 
     }
 
@@ -72,16 +69,13 @@ public class FragmentMailBox extends Fragment {
         rv.setAdapter(mailAdapteradapter);
         rv.addItemDecoration(new DividerItemDecoration(getContext(), 1));
 
-
-
     }
 
     void mailRead(String message) {
 
         if (message.equals("none"))
-            Log.e("mail addres error","mail adresi girilmedi yada olusturulamadı");
-        else
-        {
+            Log.e("mail addres error", "mail adresi girilmedi yada olusturulamadı");
+        else {
             DatabaseReference mailYolu = FirebaseDatabase.getInstance().getReference(message);
             mailYolu.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -92,10 +86,9 @@ public class FragmentMailBox extends Fragment {
                         mail.setMail_uid(snapshot.getKey());
                         mailArrayList.add(mail);
                         textViewMailshere.setVisibility(View.INVISIBLE);
-
                     }
                     mailAdapteradapter.notifyDataSetChanged();
-                    if (mailArrayList.size()==0)
+                    if (mailArrayList.size() == 0)
                         textViewMailshere.setVisibility(View.VISIBLE);
                 }
 

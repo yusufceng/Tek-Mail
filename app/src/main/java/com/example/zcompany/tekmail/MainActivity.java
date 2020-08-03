@@ -40,11 +40,8 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
-
         tabs = findViewById(R.id.tabs);
         viewpager = findViewById(R.id.viewpager);
-
-
         init();
     }
 
@@ -90,19 +87,14 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         });
         cancelDialog.show();
     }
-    public void onBackPressed()
-    {
-        if (tabs.getSelectedTabPosition()==1)
-        {
+
+    public void onBackPressed() {
+        if (tabs.getSelectedTabPosition() == 1) {
             tabs.getTabAt(0).select();
 
-        }
-        else
+        } else
             finish();
     }
-
-
-
 
 
 }
