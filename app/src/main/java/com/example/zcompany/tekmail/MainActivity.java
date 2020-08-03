@@ -40,8 +40,16 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+<<<<<<< HEAD
         tabs = findViewById(R.id.tabs);
         viewpager = findViewById(R.id.viewpager);
+=======
+
+        tabs = findViewById(R.id.tabs);
+        viewpager = findViewById(R.id.viewpager);
+
+
+>>>>>>> origin/master
         init();
     }
 
@@ -61,8 +69,21 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         f.displayReceivedData(message);
         tabs.getTabAt(1).select();
     }
+<<<<<<< HEAD
 
     public void checkConnection() {
+
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+        if (null == activeNetwork) {
+            //Toast.makeText(this, "İnternete bağlı değilsiniz", Toast.LENGTH_SHORT).show();
+            createCancelProgressDialog("İnternet bağlantısı yok", "Lütfen internet bağlantınızı kontrol ediniz..!", "Tamam");
+        }
+=======
+
+    public void checkConnection() {
+>>>>>>> origin/master
 
         ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
@@ -87,6 +108,30 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         });
         cancelDialog.show();
     }
+    public void onBackPressed()
+    {
+        if (tabs.getSelectedTabPosition()==1)
+        {
+            tabs.getTabAt(0).select();
+
+        }
+        else
+            finish();
+    }
+
+<<<<<<< HEAD
+    private void createCancelProgressDialog(String title, String message, String buttonText) {
+        cancelDialog = new ProgressDialog(this);
+        cancelDialog.setTitle(title);
+        cancelDialog.setMessage(message);
+        cancelDialog.setButton(buttonText, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(getApplicationContext(), OfflineActivity.class));
+                finish();
+            }
+        });
+        cancelDialog.show();
+    }
 
     public void onBackPressed() {
         if (tabs.getSelectedTabPosition() == 1) {
@@ -95,6 +140,10 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         } else
             finish();
     }
+=======
+
+
+>>>>>>> origin/master
 
 
 }

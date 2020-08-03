@@ -30,6 +30,11 @@ public class MailBodyActivity extends AppCompatActivity {
             findMail(getIntent().getStringExtra("uid"), getIntent().getStringExtra("alias_name"));
         else
             Log.e(getIntent().getStringExtra("uid") + getIntent().hasExtra("alias_name"), " eksik olan var");
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
     }
 
 
@@ -71,4 +76,8 @@ public class MailBodyActivity extends AppCompatActivity {
         webview.loadData(html, "text/html", "base64");
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 }

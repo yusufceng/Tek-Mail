@@ -10,22 +10,34 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#fff">
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
         <LinearLayout
             android:id="@+id/ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+<<<<<<< HEAD
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_baseline_email_24"></ImageView>
 
+=======
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_baseline_email_24"
+                ></ImageView>
+>>>>>>> origin/master
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+<<<<<<< HEAD
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -33,19 +45,35 @@
                     android:layout_marginTop="10dp"
                     android:orientation="horizontal">
 
+=======
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+>>>>>>> origin/master
                     <TextView
                         android:id="@+id/textViewName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+<<<<<<< HEAD
                         android:ellipsize="end"
                         android:maxLines="1"
                         android:text="@string/From"
                         android:textSize="16sp" />
 
+=======
+                        android:text="@string/From"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        />
+>>>>>>> origin/master
                     <TextView
                         android:id="@+id/textViewDate"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+<<<<<<< HEAD
                         android:layout_marginRight="5dp"
                         android:ellipsize="end"
                         android:gravity="right"
@@ -54,16 +82,34 @@
                         android:textSize="10sp" />
                 </LinearLayout>
 
+=======
+                        android:gravity="right"
+                        android:text="@string/Date"
+                        android:layout_marginRight="5dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="10sp"/>
+                </LinearLayout>
+>>>>>>> origin/master
                 <TextView
                     android:id="@+id/textViewSubject"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="5dp"
+<<<<<<< HEAD
                     android:ellipsize="end"
                     android:maxLength="60"
                     android:maxLines="1"
                     android:text="@string/Subject"
                     android:textSize="13sp" />
+=======
+                    android:text="@string/Subject"
+                    android:ellipsize="end"
+                    android:maxLength="60"
+                    android:maxLines="1"
+                    android:textSize="13sp"
+                    />
+>>>>>>> origin/master
 
             </LinearLayout>
 
