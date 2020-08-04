@@ -76,7 +76,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/button_popup_round"
-                    android:text="TAMAM"
+                    android:text="@string/ok"
                     android:textColor="@color/whiteBackground" />
 
 

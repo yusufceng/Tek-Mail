@@ -1,5 +1,6 @@
 package com.example.zcompany.tekmail;
 
+import android.app.TabActivity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -7,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.renderscript.Sampler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,6 +33,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+import static com.example.zcompany.tekmail.R.string.page_is_refreshed;
 
 public class FragmentMailAdrress extends Fragment {
 
@@ -54,6 +59,7 @@ public class FragmentMailAdrress extends Fragment {
     private LinearLayout LinearLayoutNew;
     private Button buttonSave;
 
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -72,6 +78,9 @@ public class FragmentMailAdrress extends Fragment {
         LinearLayoutCopy = rootView.findViewById(R.id.LinearLayoutCopy);
         LinearLayoutRefresh = rootView.findViewById(R.id.LinearLayoutRefresh);
         LinearLayoutNew = rootView.findViewById(R.id.LinearLayoutNew);
+
+
+
 
 
         sp = getActivity().getSharedPreferences("Where", getActivity().MODE_PRIVATE);
@@ -93,6 +102,8 @@ public class FragmentMailAdrress extends Fragment {
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+
+
         random_mailID = sp.getString("MailID", "none");
         mailIDRandom.getEditText().setText(random_mailID + "@tek-mail.net");
         copyPnao = (ClipboardManager) getActivity().getSystemService(Context.CLIPBOARD_SERVICE);
@@ -101,15 +112,18 @@ public class FragmentMailAdrress extends Fragment {
             @Override
             public void onRefresh() {
                 dispachRefresh();
-                Toast.makeText(getContext(), "Sayfa yenileniyor...", Toast.LENGTH_SHORT).show();
-                showAToast("Sayfa yenilendi...");
+                Toast.makeText(getContext(),R.string.page_is_refreshing, Toast.LENGTH_SHORT).show();
+                showAToast(getResources().getString(R.string.page_is_refreshed));
             }
         });
 
         buttonCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LinearLayoutTakeDomain.setVisibility(View.VISIBLE);
+                if (LinearLayoutTakeDomain.getVisibility()==View.INVISIBLE)
+                    LinearLayoutTakeDomain.setVisibility(View.VISIBLE);
+                else
+                    LinearLayoutTakeDomain.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -118,14 +132,15 @@ public class FragmentMailAdrress extends Fragment {
             public void onClick(View v) {
 
                 if (mailID.getEditText().getText().toString().equals(""))
-                    Toast.makeText(getContext(), "Lütfen boş bırakmayınız..!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), R.string.do_not_empty, Toast.LENGTH_SHORT).show();
                 else {
                     hideKeyboard();
                     SM.sendData(mailID.getEditText().getText().toString().trim());
-                    Toast.makeText(getContext(), "Mail Adresiniz olusturuluyor lütfen bekleyiniz...", Toast.LENGTH_SHORT).show();
-                    showAToast("Geçici Mail Adresiniz Kullanıma Hazır!");
+                    Toast.makeText(getContext(), R.string.mail_creating, Toast.LENGTH_SHORT).show();
+                    showAToast(getResources().getString(R.string.mail_created));
                     spMailIDRegister(mailID.getEditText().getText().toString());
                     mailIDRandom.getEditText().setText(mailID.getEditText().getText().toString() + "@tek-mail.net");
+                    LinearLayoutTakeDomain.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -140,8 +155,10 @@ public class FragmentMailAdrress extends Fragment {
             @Override
             public void onClick(View v) {
                 getRandomMailIDFromDB();
-                Toast.makeText(getContext(), "Yeni e-mail hesabınız ayarlanıyor...", Toast.LENGTH_SHORT).show();
-                showAToast("Yeni e-mail hesabınız kullanıma hazır.");
+                Toast.makeText(getContext(), R.string.mail_creating, Toast.LENGTH_SHORT).show();
+                showAToast(getResources().getString(R.string.new_random_mail));
+                //SM.sendData(mailID.getEditText().getText().toString().trim());
+
             }
         });
 
@@ -155,17 +172,17 @@ public class FragmentMailAdrress extends Fragment {
                 copyPnao.setPrimaryClip(clipData);
 
                 if (copyiedString.equals(""))
-                    Toast.makeText(getContext(), "Kopyalama başarısız", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),getResources().getString(R.string.copy_fail), Toast.LENGTH_SHORT).show();
                 else
-                    Toast.makeText(getContext(), "\"" + copyiedString + "\"" + " Panoya Kopyalandı", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "\"" + copyiedString + "\"" + getResources().getString(R.string.copy_succ), Toast.LENGTH_SHORT).show();
             }
         });
         LinearLayoutRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dispachRefresh();
-                Toast.makeText(getContext(), "Sayfa yenileniyor...!", Toast.LENGTH_SHORT).show();
-                showAToast("Sayfa yenilendi...");
+                Toast.makeText(getContext(), R.string.page_is_refreshing, Toast.LENGTH_SHORT).show();
+                showAToast(getResources().getString(R.string.page_is_refreshed));
             }
         });
 
@@ -191,7 +208,7 @@ public class FragmentMailAdrress extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getActivity(), st, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), (String)st, Toast.LENGTH_SHORT).show();
             }
         }, SHORT_DELAY);
     }

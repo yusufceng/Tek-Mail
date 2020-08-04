@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name = "app_name"> Tek Mail </string>
+    <string name = "From"> प्रेषक </string>
+    <string name = "Subject"> विषय </string>
+    <string name = "Date"> दिनांक </string>
+    <string name = "nails_ishere"> आपका मेल यहां प्रदर्शित होगा </string>
+    <string name = "connection_state"> कृपया अपना इंटरनेट कनेक्शन सेट करें और पुनः प्रयास करें ... </string>
+    <string name = "connection_stateNO"> इंटरनेट कनेक्शन अभी भी स्थापित नहीं हुआ है ..!  </string>
+    <string name = "connection_stateOK"> कनेक्शन स्थापित किया गया है, आप पुनर्निर्देशित कर रहे हैं ..!  </string>
+    <string name = "connections_try"> इंटरनेट कनेक्शन अभी भी स्थापित नहीं है ..! </string>
+    <string name = "connection_state2"> आपको इंटरनेट कनेक्शन के बिना ईमेल पता नहीं मिल सकता है, मेलबॉक्स की जांच करने के लिए ओके दबाएं  </string>
+    <string name = "slogan1"> फ्री टेम्प ईमेल सर्विस </string>
+    <string name = "slogan2"> एक आईडी लिखें और वापस बैठें .... </string>
+    <string name = "welcome"> स्वागत है। </string>
+    <string name = "onetime"> एक बार की मेल सेवा </string>
+    <string name = "tryagain"> पुन: प्रयास करें </string>
+    <string name = "ok"> ठीक है </string>
+    <string name = "copy"> कॉपी </string>
+    <string name = "refresh"> रीफ़्रेश करें </string>
+    <string name = "neew"> नया </string>
+    <string name = "remove"> हटाना </string>
+    <string name = "or"> या </string>
+    <string name = "create"> सृजन करना </string>
+    <string name = "register"> रजिस्टर करें </string>
+    <string name = "page_is_refreshing"> पृष्ठ ताज़ा हो रहा है ... </string>
+    <string name = "page_is_refreshed"> "पृष्ठ ताज़ा किया गया ..." </string>
+    <string name = "do_not_empty"> कृपया खाली न करें ..! </string>
+    <string name = "mail_creating"> अपना ई-मेल पता बनाएं, कृपया प्रतीक्षा करें ... </string>
+    <string name = "mail_created"> आपका अस्थायी मेल पता उपयोग के लिए तैयार है! </string>
+    <string name = "more_domain"> हमारे पास अभी के लिए केवल एक ही डोमेन नाम उपलब्ध है, और जल्द ही सक्रिय हो जाएगा </string>
+    <string name = "new_random_mail"> आपका नया ई-मेल खाता उपयोग के लिए तैयार है। </string>
+    <string name = "copy_fail"> कॉपी विफल ... </string>
+    <string name = "copy_succ"> क्लिपबोर्ड पर कॉपी किया गया </string>
+    <string name = "mail_load"> Mail लोड हो रहा है </string>
+    <string name = "home_page"> HomePage </string>
+    <string name = "inbox"> inbox </string>
+
+
+
+
+
+
+
+</resources>

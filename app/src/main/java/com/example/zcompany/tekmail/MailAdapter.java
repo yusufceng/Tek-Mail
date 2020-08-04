@@ -2,21 +2,15 @@ package com.example.zcompany.tekmail;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasarimNesneleriniTutucu> {
@@ -55,28 +49,18 @@ public class MailAdapter extends RecyclerView.Adapter<MailAdapter.CardViewTasari
     public void onBindViewHolder(@NonNull final CardViewTasarimNesneleriniTutucu holder, int position) {
         final Mail mail = mailList.get(position);
 
-        String dtStart = mail.getMail_Date();
-        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
-        try {
-            Date date = format.parse(dtStart);
-            Log.e(" ", date.toString());
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
         if (mail.getMail_From_Name().equals(""))
             holder.textViewName.setText((mail.getMail_From_Address()));
         else
             holder.textViewName.setText(mail.getMail_From_Name());
 
 
-        holder.textViewDate.setText(dtStart);
+        holder.textViewDate.setText(mail.getMail_Date());
         holder.textViewSubject.setText(mail.getMail_Subject());
         holder.ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Mail yükleniyor ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, R.string.mail_load, Toast.LENGTH_SHORT).show();
 
                 Intent yeniIntent = new Intent(mContext, MailBodyActivity.class);
                 yeniIntent.putExtra("uid", mail.getMail_uid());

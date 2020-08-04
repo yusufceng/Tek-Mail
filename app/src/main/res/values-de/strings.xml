@@ -1,0 +1,43 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name = "app_name"> Tek Mail </string>
+    <string name = "From"> Absender </string>
+    <string name = "Subject"> Betreff </string>
+    <string name = "Date"> Datum </string>
+    <string name = "nails_ishere"> Ihre E-Mail wird hier angezeigt </string>
+    <string name = "connection_state"> Bitte richten Sie Ihre Internetverbindung ein und versuchen Sie es erneut ... </string>
+    <string name = "connection_stateNO"> Internetverbindung noch nicht hergestellt ..! </string>
+    <string name = "connection_stateOK"> Die Verbindung wurde hergestellt, Sie leiten um ..! </string>
+    <string name = "connections_try"> Internetverbindung noch nicht hergestellt ..! </string>
+    <string name = "connection_state2"> Sie können keine E-Mail-Adresse ohne Internetverbindung erhalten. Drücken Sie OK, um das Postfach </string> zu überprüfen
+    <string name = "slogan1"> Kostenloser temporärer E-Mail-Service </string>
+    <string name = "slogan2"> Schreiben Sie eine ID und lehnen Sie sich zurück .... </string>
+    <string name = "welcome"> Willkommen. </string>
+    <string name = "onetime"> Einmaliger Mail-Service </string>
+    <string name = "tryagain"> Versuchen Sie es erneut </string>
+    <string name = "ok"> OK </string>
+    <string name = "copy"> KOPIEREN </string>
+    <string name = "refresh"> AKTUALISIERUNG</string>
+    <string name = "neew"> NEU </string>
+    <string name = "remove"> ENTFERNEN </string>
+    <string name = "or"> ODER </string>
+    <string name = "create"> ERSTELLEN </string>
+    <string name = "register"> REGISTRIEREN </string>
+    <string name = "page_is_refreshing"> Seite wird aktualisiert ... </string>
+    <string name = "page_is_refreshed"> "Seite aktualisiert ..." </string>
+    <string name = "do_not_empty"> Bitte nicht leeren ..! </string>
+    <string name = "mail_creating"> Wenn Sie Ihre E-Mail-Adresse erstellen, warten Sie bitte ... </string>
+    <string name = "mail_created"> Ihre temporäre E-Mail-Adresse ist einsatzbereit! </string>
+    <string name = "more_domain"> Derzeit ist nur ein Domainname verfügbar. Weitere werden in Kürze aktiv sein. </string>
+    <string name = "new_random_mail"> Ihr neues E-Mail-Konto ist einsatzbereit. </string>
+    <string name = "copy_fail"> Kopieren fehlgeschlagen ... </string>
+    <string name = "copy_succ"> In die Zwischenablage kopiert </string>
+    <string name = "mail_load"> Mail wird geladen </string>
+    <string name = "home_page"> HomePage </string>
+    <string name = "inbox"> Posteingang </string>
+
+
+
+
+
+
+</resources>

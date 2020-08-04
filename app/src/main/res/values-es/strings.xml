@@ -1,0 +1,39 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name = "app_name"> Tek Mail </string>
+    <string name = "From"> Remitente </string>
+    <string name = "Subject"> Asunto </string>
+    <string name = "Date"> Fecha </string>
+    <string name = "nails_ishere"> Su correo se mostrará aquí </string>
+    <string name = "connection_state"> Configure su conexión a Internet e intente nuevamente ... </string>
+    <string name = "connection_stateNO"> La conexión a Internet aún no está establecida ...! </string>
+    <string name = "connection_stateOK"> Se ha establecido la conexión, está redirigiendo ...! </string>
+    <string name = "connections_try"> La conexión a Internet aún no está establecida ...! </string>
+    <string name = "connection_state2"> No puede obtener una dirección de correo electrónico sin una conexión a Internet, presione OK para verificar el buzón </string>
+    <string name = "slogan1"> Servicio gratuito de correo electrónico temporal </string>
+    <string name = "slogan2"> Escriba una ID y siéntese ... </string>
+    <string name = "welcome"> Bienvenido. </string>
+    <string name = "onetime"> Servicio de correo único </string>
+    <string name = "tryagain"> Inténtalo de nuevo </string>
+    <string name = "ok"> OK </string>
+    <string name = "copy"> ACTUALIZAR </string>
+    <string name = "refresh"> ACTUALIZAR </string>
+    <string name = "neew"> NUEVO </string>
+    <string name = "remove"> ELIMINAR </string>
+    <string name = "or"> O </string>
+    <string name = "create"> CREAR </string>
+    <string name = "register"> REGISTRO </string>
+    <string name = "page_is_refreshing"> La página se está actualizando ... </string>
+    <string name = "page_is_refreshed"> "Página actualizada ..." </string>
+    <string name = "do_not_empty"> ¡No vacíe ...! </string>
+    <string name = "mail_creating"> Creando su dirección de correo electrónico, espere ... </string>
+    <string name = "mail_created"> ¡Su dirección de correo temporal está lista para usar! </string>
+    <string name = "more_domain"> Solo tenemos un nombre de dominio disponible por ahora, pronto habrá más activos </string>
+    <string name = "new_random_mail"> Su nueva cuenta de correo electrónico está lista para usar. </string>
+    <string name = "copy_fail"> Copia fallida ... </string>
+    <string name = "copy_succ"> Copiado al Portapapeles </string>
+    <string name = "mail_load"> El correo se está cargando </string>
+    <string name = "home_page"> Página de inicio </string>
+    <string name = "inbox"> Bandeja de entrada </string>
+
+</resources>

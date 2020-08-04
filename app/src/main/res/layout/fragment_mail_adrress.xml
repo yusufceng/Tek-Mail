@@ -30,7 +30,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="-20dp"
                 android:fontFamily="@font/bangers"
-                android:text="Ücretsiz Temp E-mail Hizmeti "
+                android:text="@string/slogan1"
                 android:textSize="18sp" />
 
             <TextView
@@ -39,7 +39,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="5dp"
                 android:layout_marginLeft="5dp"
-                android:text="Bir ID yazın ve arkanıza yaslanın..."
+                android:text="@string/slogan2"
                 android:textSize="13sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -88,7 +88,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:text="KOPYALA"
+                        android:text="@string/copy"
                         android:textColor="@color/colorPrimary" />
                 </LinearLayout>
 
@@ -113,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:text="YENİLE"
+                        android:text="@string/refresh"
                         android:textColor="@color/colorPrimary" />
                 </LinearLayout>
 
@@ -138,7 +138,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:text="YENİ"
+                        android:text="@string/neew"
                         android:textColor="@color/colorPrimary" />
                 </LinearLayout>
 
@@ -163,7 +163,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="5dp"
-                        android:text="SİL"
+                        android:text="@string/remove"
                         android:textColor="@color/colorPrimary" />
                 </LinearLayout>
 
@@ -174,7 +174,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="YA DA"
+                android:text="@string/or"
                 android:textColor="@color/colorPrimary"
                 android:textSize="20dp"
                 android:textStyle="bold" />
@@ -186,7 +186,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/button_random_round"
-                android:text="OLUŞTUR"
+                android:text="@string/create"
                 android:textColor="#fff" />
 
             <LinearLayout
@@ -233,7 +233,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/button_random_round"
-                    android:text="KAYDET"
+                    android:text="@string/register"
                     android:textColor="#fff" />
             </LinearLayout>
 

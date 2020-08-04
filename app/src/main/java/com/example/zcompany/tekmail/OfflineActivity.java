@@ -41,7 +41,7 @@ public class OfflineActivity extends AppCompatActivity {
                 ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
                 if (null == activeNetwork) {
-                    Toast.makeText(OfflineActivity.this, "Bağlantı kurulamadı tekrar deneyiniz..!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(OfflineActivity.this, R.string.connections_try, Toast.LENGTH_SHORT).show();
                     textViewConnectStatus.setText(R.string.connections_try);
                 } else {
                     imageviewConnectionsState.setImageResource(R.drawable.ic_baseline_wifi_24);

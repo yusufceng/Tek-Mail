@@ -12,25 +12,16 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.Toast;
-
+import android.widget.LinearLayout;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements FragmentMailAdrress.SendMessage {
     private TabLayout tabs;
+    private LinearLayout LinearLayoutNew;
     private ViewPager viewpager;
     ProgressDialog cancelDialog;
 
@@ -42,6 +33,8 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         setContentView(R.layout.activity_main);
         tabs = findViewById(R.id.tabs);
         viewpager = findViewById(R.id.viewpager);
+
+
         init();
     }
 
@@ -51,6 +44,7 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         viewpager.setAdapter(adapter);
         viewpager.setAdapter(adapter);
         tabs.setupWithViewPager(viewpager);
+
 
     }
 

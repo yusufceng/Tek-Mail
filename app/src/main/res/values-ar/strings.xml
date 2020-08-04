@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string name = "app_name"> Tek Mail </string>
+    <string name = "From"> المرسل </string>
+    <string name = "Subject"> الموضوع </string>
+    <string name = "Date"> التاريخ </string>
+    <string name = "nails_ishere"> سيتم عرض بريدك هنا </string>
+    <string name = "connection_state"> يرجى إعداد اتصال الإنترنت الخاص بك وإعادة المحاولة ... </string>
+    <string name = "connection_stateNO"> لم يتم تأسيس اتصال الإنترنت ..! </string>
+    <string name = "connection_stateOK"> تم إنشاء الاتصال ، أنت بصدد إعادة التوجيه ..! </string>
+    <string name = "connections_try"> اتصال الإنترنت لم يتم تأسيسه بعد ..! </string>
+    <string name = "connection_state2"> لا يمكنك الحصول على عنوان بريد إلكتروني بدون اتصال بالإنترنت ، اضغط على "موافق" للتحقق من صندوق البريد </string>
+    <string name = "slogan1"> خدمة البريد الإلكتروني المؤقت المؤقت </string>
+    <string name = "slogan2"> اكتب معرفًا واسترخِ .... </string>
+    <string name = "welcome"> مرحبًا. </string>
+    <string name = "onetime"> خدمة البريد لمرة واحدة </string>
+    <string name = "tryagain"> حاول مرة أخرى </string>
+    <string name = "ok"> موافق </string>
+    <string name = "copy"> نسخ </string>
+    <string name = "refresh"> تحديث </string>
+    <string name = "neew"> جديد </string>
+    <string name = "remove"> إزالة </string>
+    <string name = "or"> أو </string>
+    <string name = "create"> إنشاء </string>
+    <string name = "register"> تسجيل </string>
+    <string name = "page_is_refreshing"> يتم تحديث الصفحة ... </string>
+    <string name = "page_is_refreshed"> "تم تحديث الصفحة ..." </string>
+    <string name = "do_not_empty"> من فضلك لا تفرغ ..! </string>
+    <string name = "mail_creating"> إنشاء عنوان بريدك الإلكتروني ، يرجى الانتظار ... </string>
+    <string name = "mail_created"> عنوان بريدك المؤقت جاهز للاستخدام! </string>
+    <string name = "more_domain"> لدينا فقط اسم نطاق واحد متاح حاليًا ، سيتم تفعيل المزيد قريبًا </string>
+    <string name = "new_random_mail"> حساب بريدك الإلكتروني الجديد جاهز للاستخدام. </string>
+    <string name = "copy_fail"> فشل النسخ ... </string>
+    <string name = "copy_succ"> تم النسخ إلى الحافظة </string>
+    <string name = "mail_load"> يتم تحميل البريد </string>
+    <string name = "home_page"> الصفحة الرئيسية </string>
+    <string name = "inbox"> صندوق الوارد </string>
+
+
+
+
+
+
+</resources>

@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name = "app_name"> Tek Mail </string>
+    <string name = "From"> Mittente </string>
+    <string name = "Subject"> Soggetto </string>
+    <string name = "Date"> Data </string>
+    <string name = "nails_ishere"> La tua posta verrà visualizzata qui </string>
+    <string name = "connection_state"> Configura la tua connessione Internet e riprova ... </string>
+    <string name = "connection_stateNO"> La connessione a Internet non è stata ancora stabilita ..! </string>
+    <string name = "connection_stateOK"> La connessione è stata stabilita, stai reindirizzando ..! </string>
+    <string name = "connections_try"> La connessione Internet non è stata ancora stabilita ..! </string>
+    <string name = "connection_state2"> Non è possibile ottenere un indirizzo e-mail senza una connessione Internet, premere OK per aprire la connessione Internet </string>
+    <string name = "slogan1"> Servizio email temporaneo gratuito </string>
+    <string name = "slogan2"> Scrivi un ID e rilassati .... </string>
+    <string name = "welcome"> Benvenuti. </string>
+    <string name = "onetime"> Servizio di posta unico </string>
+    <string name = "tryagain"> Riprova </string>
+    <string name = "ok"> OK </string>
+    <string name = "copy"> COPIA </string>
+    <string name = "refresh"> RICARICARE </string>
+    <string name = "neew"> NUOVA </string>
+    <string name = "remove"> RIMUOVERE </string>
+    <string name = "or"> O </string>
+    <string name = "create"> CREARE </string>
+    <string name = "register"> REGISTRATI </string>
+    <string name = "page_is_refreshing"> La pagina si sta aggiornando ... </string>
+    <string name = "page_is_refreshed"> Pagina aggiornata ... </string>
+    <string name = "do_not_empty"> Per favore, non svuotare ..! </string>
+    <string name = "mail_creating"> Preparando il tuo indirizzo email, attendi ... </string>
+    <string name = "mail_created"> Il tuo indirizzo di posta temporaneo è pronto per l\'uso! </string>
+    <string name = "more_domain"> Per ora abbiamo solo un nome di dominio, presto ne saranno attivi altri </string>
+    <string name = "new_random_mail"> Il tuo nuovo account e-mail è pronto per l\'uso. </string>
+    <string name = "copy_fail"> Copia non riuscita ... </string>
+    <string name = "copy_succ">  Copiato negli Appunti </string>
+    <string name = "mail_load"> La posta si sta caricando </string>
+    <string name = "home_page"> HomePage </string>
+    <string name = "inbox"> Inbox </string>
+
+
+
+
+
+
+
+</resources>

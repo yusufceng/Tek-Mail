@@ -1,16 +1,37 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Tek Mail</string>
-    <string name="From">Gönderen</string>
-    <string name="Subject">Konu</string>
-    <string name="Date">Tarih</string>
-    <string name="nails_ishere">Mailleriniz bu alanda gösterilecektir.</string>
-    <string name="connection_state">Lütfen internet bağlantınızı kurup tekrar deneyiniz...</string>
-    <string name="connection_stateNO">Internet bağlantısı hala kurulamadı..!</string>
-    <string name="connection_stateOK">Bağlantı Kuruldu, yönlendiriliyorsunuz..!</string>
-    <string name="connections_try">İnternet bağlantısı hala kurulamadı..!</string>
-    <string name="connection_state2">Internet bağlantısı olmadan mail adresi alamazsınız, mail kutusunu kontrol etmek için Tamam\'a basınız</string>
-
-
-
-
+    <string name="From">Sender</string>
+    <string name="Subject">Subject</string>
+    <string name="Date">Date</string>
+    <string name="nails_ishere">Your mail will be displayed here</string>
+    <string name="connection_state">Please set up your internet connection and try again ...</string>
+    <string name="connection_stateNO">Internet connection still not established ..! </string>
+    <string name="connection_stateOK">Connection has been established, you are redirecting ..! </string>
+    <string name="connections_try">Internet connection still not established ..!</string>
+    <string name="connection_state2">You cannot get an email address without an internet connection, press OK to check the mailbox </string>
+    <string name="slogan1">Free Temp Email Service </string>
+    <string name="slogan2">Write an ID and sit back ....</string>
+    <string name="welcome">Welcome.</string>
+    <string name="onetime">One-time mail service </string>
+    <string name="tryagain">Try Again </string>
+    <string name="ok"> OK </string>
+    <string name="copy">COPY</string>
+    <string name="refresh">RERFESH</string>
+    <string name="neew">NEW</string>
+    <string name="remove">REMOVE</string>
+    <string name="or">OR</string>
+    <string name="create">CREATE</string>
+    <string name="register">REGISTER</string>
+    <string name="page_is_refreshing">Page is refreshing...</string>
+    <string name="page_is_refreshed">"Page refreshed ..."</string>
+    <string name="do_not_empty">Please do not empty..!</string>
+    <string name="mail_creating">Creating your e-mail address, please wait ...</string>
+    <string name="mail_created">Your Temporary Mail Address is Ready to Use!</string>
+    <string name="more_domain">We have only one domain name available for now, more will be active soon</string>
+    <string name="new_random_mail">Your new e-mail account is ready for use.</string>
+    <string name="copy_fail">Copy failed...</string>
+    <string name="copy_succ"> Copied to Clipboard</string>
+    <string name="mail_load"> Mail is Loading</string>
+    <string name="home_page">HomePage</string>
+    <string name="inbox">Inbox</string>
 </resources>

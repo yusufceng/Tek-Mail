@@ -1,5 +1,8 @@
 package com.example.zcompany.tekmail;
 
+import android.content.Context;
+import android.content.res.Resources;
+
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,9 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 class MyViewPagerAdapter extends FragmentPagerAdapter {
+
     private final List<Fragment> fragmentList = new ArrayList<>();
     private final List<String> fragmentBaslikList = new ArrayList<>();
-
+    private Context mContext;
     public MyViewPagerAdapter(FragmentManager manager) {
         super(manager);
     }
@@ -37,9 +41,9 @@ class MyViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         String title = null;
         if (position == 0) {
-            title = "AnaSayfa";
+            title = "HomePage";
         } else if (position == 1) {
-            title = "Gelen Kutusu";
+            title ="InBox";
         }
         return title;
     }
