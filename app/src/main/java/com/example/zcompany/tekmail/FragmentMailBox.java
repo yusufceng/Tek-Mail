@@ -87,6 +87,7 @@ public class FragmentMailBox extends Fragment {
         rv.setAdapter(mailAdapteradapter);
         rv.addItemDecoration(new DividerItemDecoration(getContext(), 1));
         mailAdapteradapter.notifyDataSetChanged();
+        
 
     }
 

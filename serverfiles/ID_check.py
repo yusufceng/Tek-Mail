@@ -1,7 +1,7 @@
 from firebase import firebase
 
 firebase = firebase.FirebaseApplication(
-            "https://tek-mail.firebaseio.com/", None)
+            "your/firebase/app/link", None)
 
 while True:
 	myGetResult=firebase.get('/User',None)

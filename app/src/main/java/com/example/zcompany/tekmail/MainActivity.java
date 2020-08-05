@@ -45,6 +45,23 @@ public class MainActivity extends AppCompatActivity implements FragmentMailAdrre
         viewpager.setAdapter(adapter);
         tabs.setupWithViewPager(viewpager);
 
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
 
     }
 

@@ -14,7 +14,7 @@ def get_random_alphaNumeric_pwd(stringLength=13):
 
 
 firebase = firebase.FirebaseApplication(
-    "https://tek-mail.firebaseio.com/", None)
+    "your/firebase/app/link", None)
 for i in range(100):
     mail_adresi = get_random_alphaNumeric_string(13)
     mail_pwd = get_random_alphaNumeric_pwd(10)

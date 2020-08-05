@@ -1,1 +1,1 @@
-curl -X POST "http://tek-mail.net/api/v1/delete/mailbox" -H "accept: application/json" -H "X-API-Key: 3cd84bba956c9055d70c3a4e047b5fd3b57971c560bd2c10cb82aa483c87ef7a" -H "Content-Type: application/json" -d "[ \"$1@tek-mail.net\" ]" --insecure
+curl -X POST "http://YOUR_DOMAIN/api/v1/delete/mailbox" -H "accept: application/json" -H "X-API-Key: YOUR_API_KEY" -H "Content-Type: application/json" -d "[ \"$1@YOUR_DOMAIN\" ]" --insecure

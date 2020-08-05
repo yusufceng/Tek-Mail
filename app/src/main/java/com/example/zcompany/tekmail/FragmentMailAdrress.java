@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.renderscript.Sampler;
+import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,7 @@ public class FragmentMailAdrress extends Fragment {
     private LinearLayout LinearLayoutCopy;
     private LinearLayout LinearLayoutRefresh;
     private LinearLayout LinearLayoutNew;
+    private LinearLayout LinearLayoutDelete;
     private Button buttonSave;
 
 
@@ -78,6 +80,7 @@ public class FragmentMailAdrress extends Fragment {
         LinearLayoutCopy = rootView.findViewById(R.id.LinearLayoutCopy);
         LinearLayoutRefresh = rootView.findViewById(R.id.LinearLayoutRefresh);
         LinearLayoutNew = rootView.findViewById(R.id.LinearLayoutNew);
+        LinearLayoutDelete = rootView.findViewById(R.id.LinearLayoutDelete);
 
 
 
@@ -161,6 +164,15 @@ public class FragmentMailAdrress extends Fragment {
 
             }
         });
+        LinearLayoutDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mailID.getEditText().getText().equals(""))
+                    showAToast(getResources().getString(R.string.do_not_empty));
+                else
+                    removeMailIDFromDB(mailID.getEditText().getText());
+            }
+        });
 
         LinearLayoutCopy.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -185,6 +197,13 @@ public class FragmentMailAdrress extends Fragment {
                 showAToast(getResources().getString(R.string.page_is_refreshed));
             }
         });
+
+    }
+
+    private void removeMailIDFromDB(Editable text) {
+        DatabaseReference pathID = FirebaseDatabase.getInstance().getReference().child(text.toString());
+        pathID.removeValue();
+        getRandomMailIDFromDB();
 
     }
 

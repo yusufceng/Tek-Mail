@@ -40,7 +40,7 @@ class Handler(FileSystemEventHandler):
             #print(head)
             #os.system(f"./entrypoint.sh {head}")
             #print("***************************************************")
-            result =re.search("/var/lib/docker/volumes/mailcowdockerized_vmail-vol-1/_data/tek-mail.net/(.*)/Maildir", file_path)
+            result =re.search("/var/lib/docker/volumes/mailcowdockerized_vmail-vol-1/_data/YOUR_DOMAIN/(.*)/Maildir", file_path)
             #print(result.group(1))
             user_name=result.group(1)
             print("Maili alan kullanıcı ---->")
@@ -48,7 +48,7 @@ class Handler(FileSystemEventHandler):
             #mail_path=head+"Maildir/new"
             #print(mail_path)
             #os.system(f"docker-compose exec dovecot-mailcow /bin/bash ./sifre_cozucu.sh {user_name},{mail_path}")
-            os.system(f"docker-compose exec dovecot-mailcow /bin/bash ./enc.sh {user_name}")
+            os.system(f"docker-compose exec -T dovecot-mailcow /bin/bash ./enc.sh {user_name}")
 
         #elif event.event_type == 'modified':
             # Taken any action here when a file is modified.
